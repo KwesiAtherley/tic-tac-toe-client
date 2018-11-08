@@ -22,10 +22,10 @@ const signInSuccess = function (signInResponse) {
   $('#message').html('You signed in successfully')
   $('#message').addClass('success-message')
   $('#message').removeClass('error-message')
-  $('#change-password-form').removeClass('hidden')
-  $('#sign-out-button').removeClass('hidden')
-  $('#sign-up-form').addClass('hidden')
-  $('#sign-in-form').addClass('hidden')
+  $('#change-password').removeClass('hidden')
+  $('#sign-out').removeClass('hidden')
+  $('#sign-up').addClass('hidden')
+  $('#sign-in').addClass('hidden')
 }
 
 const changePasswordSuccess = function (changePasswordResponse) {
@@ -38,10 +38,10 @@ const signOutSuccess = function () {
   $('#message').html('You signed out successfully')
   $('#message').addClass('success-message')
   $('#message').removeClass('error-message')
-  $('#change-password-form').addClass('hidden')
-  $('#sign-out-button').addClass('hidden')
-  $('#sign-up-form').removeClass('hidden')
-  $('#sign-in-form').removeClass('hidden')
+  $('#change-password').addClass('hidden')
+  $('#sign-out').addClass('hidden')
+  $('#sign-up').removeClass('hidden')
+  $('#sign-in').removeClass('hidden')
 }
 module.exports = {
   signUpSuccess,
