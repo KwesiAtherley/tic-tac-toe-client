@@ -2,5 +2,12 @@
 
 const store = {
 }
+const gameBoard = ['', '', '', '', '', '', '', '', '']
 
-module.exports = store
+const games = {
+}
+module.exports = {
+  store,
+  gameBoard,
+  games
+}

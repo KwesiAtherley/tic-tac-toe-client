@@ -7,10 +7,9 @@ const newGame = function () {
     url: config.apiUrl + '/games',
     method: 'POST',
     headers: {
-      contentType: 'application/json',
       Authorization: 'Token token=' + store.user.token
     },
-    data: '{}'
+    contentType: 'application/json'
   })
 }
 
@@ -25,30 +24,29 @@ const getGame = function () {
   })
 }
 
-const updateGame = function (index, value, over) {
+const onUpdateMove = function (id, value) {
   return $.ajax({
-    url: config.apiUrl + '/games/' + store.game.id,
+    url: config.apiUrl + '/games/' + store.games.game.id,
     method: 'PATCH',
     headers: {
-      contentType: 'application/json',
       Authorization: 'Token token=' + store.user.token
     },
-    data: {
-
-      'game': {
-        'cell': {
-          'index': index,
-          'value': value
-        },
-        'over': false
-      }
-    }
-  }
-  )
+    contentType: 'application/json',
+    data: JSON.stringify(
+      {
+        'game': {
+          'cell': {
+            'index': id,
+            'value': value
+          },
+          'over': false
+        }
+      })
+  })
 }
 
 module.exports = {
-  updateGame,
+  onUpdateMove,
   getGame,
   newGame
 }

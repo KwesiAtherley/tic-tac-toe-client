@@ -5,30 +5,34 @@
 // const playerX =  x
 // const playerO = o
 // const currentgame = []
-
-let whichTurn = (0)
-
-const whosTurnIsIt = function (aTurn) {
-  let chance = ('x')
-  if (aTurn % 2 === 0) {
-    chance = 'x'
-  } else {
-    chance = 'o'
-  }
-  return chance
-}
-
-for (let i = 0; i < 9; i++) {
-  const whosTurn = whosTurnIsIt(whichTurn)
-  console.log('whichTurn', whichTurn)
-  whichTurn++
-  console.log('whosTurn', whosTurn)
-  whosTurnIsIt(0, 'x')
-}
-
-// if playerX(clicks data cell 1) {
-//   played.push(clicks)
-//   lock off cell
+// const gameBoard = ['', '', '', '', '', '', '', '', '']
+//
+// let whichTurn = (0)
+//
+// const whosTurnIsIt = function (aTurn) {
+//   let chance = ('x')
+//   if (aTurn % 2 === 0) {
+//     chance = 'x'
+//   } else {
+//     chance = 'o'
+//   }
+//   return chance
+// }
+//
+// for (let i = 0; i < 9; i++) {
+//   const whosTurn = whosTurnIsIt(whichTurn)
+//   // console.log('whichTurn', whichTurn)
+//   whichTurn++
+//   // console.log('whosTurn', whosTurn)
+//   whosTurnIsIt(0, 'x')
+// }
+//
+// module.exports = {
+//   gameBoard
+// }
+// // if playerX(clicks data cell 1) {
+// //   played.push(clicks)
+// //   lock off cell
 // }
 
 // const played = function (currentGame) {
