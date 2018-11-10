@@ -18,7 +18,13 @@ const onUpdateMoveSuccess = function (onUpdateMove) {
   $('#message').removeClass('error-message')
 }
 
+const failure = function (onFailure) {
+  $('#message').html('Something went wrong, please try again')
+  $('#message').removeClass('success-message')
+  $('#message').addClass('error-message')
+}
 module.exports = {
   onUpdateMoveSuccess,
-  onNewGameSuccess
+  onNewGameSuccess,
+  failure
 }

@@ -7,6 +7,14 @@ const switchPlayer = function (playerId) {
   return store.player
 }
 
+const checkBox = function (id, player) {
+  if (store.cells[id] === '') {
+    store.cells[id] = player
+    console.log('it wrked')
+  } else if (store.cells[id] === 'x' || 'o') {
+    console.log('Try Again')
+  }
+}
 const findWinner = function (gameboard) {
   if ((gameboard[0] === 'x' && gameboard[1] === 'x' && gameboard[2] === 'x') ||
 (gameboard[3] === 'x' && gameboard[4] === 'x' && gameboard[5] === 'x') ||
@@ -34,5 +42,6 @@ const findWinner = function (gameboard) {
 }
 module.exports = {
   switchPlayer,
-  findWinner
+  findWinner,
+  checkBox
 }

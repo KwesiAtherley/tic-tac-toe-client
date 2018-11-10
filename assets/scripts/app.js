@@ -16,5 +16,4 @@ $(() => {
   $('#sign-out').on('click', authEvents.onSignOut)
   $('.grid').on('click', gameEvents.onUpdateMove)
   $('#create-game').on('click', gameEvents.onNewGame)
-  // $('#create-example-form').on('submit', exampleEvents.onCreateExample)
 })
