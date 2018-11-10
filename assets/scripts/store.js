@@ -2,12 +2,14 @@
 
 const store = {
 }
-const gameBoard = ['', '', '', '', '', '', '', '', '']
+// const gameBoard = ['', '', '', '', '', '', '', '', '']
 
-const games = {
-}
+// const games = {
+// }
+
+const player = 'x'
+
 module.exports = {
   store,
-  gameBoard,
-  games
+  player
 }

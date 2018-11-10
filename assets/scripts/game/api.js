@@ -26,7 +26,7 @@ const getGame = function () {
 
 const onUpdateMove = function (id, value) {
   return $.ajax({
-    url: config.apiUrl + '/games/' + store.games.game.id,
+    url: config.apiUrl + '/games/' + store.game,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token

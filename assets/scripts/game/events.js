@@ -4,18 +4,21 @@
 const api = require('./api.js')
 const ui = require('./ui.js')
 const store = require('../store.js')
-const player = 'x'
+const gameLogic = require('./gameLogic.js')
 
 const onUpdateMove = function (event) {
   event.preventDefault()
+  const player = store.player
   const data = $(event.target).data()
   const id = data.cellIndex
-  store.gameBoard[id] = player
+  store.cells[id] = player
   console.log(id)
   console.log(store)
   api.onUpdateMove(id, player)
     .then()
     .catch()
+  gameLogic.switchPlayer(player)
+  gameLogic.findWinner(store.cells)
 }
 
 const onNewGame = function (event) {

@@ -3,7 +3,8 @@
 const store = require('../store.js')
 
 const onNewGameSuccess = function (newGame) {
-  store.games = newGame
+  store.game = newGame.game.id
+  store.cells = newGame.game.cells
   console.log(store)
   $('#message').html('Started New Game')
   $('#message').addClass('success-message')
