@@ -8,23 +8,19 @@ const gameLogic = require('./gameLogic.js')
 
 const onUpdateMove = function (event) {
   event.preventDefault()
+  const over = store.over
   const player = store.player
-  const data = $(event.target).data()
-  const id = data.cellIndex
-  // console.log(id)
-  // console.log(store)
+  const id = $(event.target).data().cellIndex
   api.onUpdateMove(id, player)
-    .then(ui.onUpdateMoveSuccess)
+    .then(ui.onUpdateMoveSuccess(id))
     .catch(ui.failure)
-  gameLogic.checkBox(id, player)
+  gameLogic.checkBox(id, player, over)
   gameLogic.switchPlayer(player)
   gameLogic.findWinner(store.cells)
 }
 
 const onNewGame = function (event) {
   event.preventDefault()
-  // const data = getFormFields(event.target)
-  // $(event.target).trigger('reset')
   api.newGame()
     .then(ui.onNewGameSuccess)
     .catch(ui.failure)
@@ -34,9 +30,16 @@ const addHandlers = function () {
   $('#play-game').on('submit', onNewGame)
 }
 
-// }
+const onGetGame = function (event) {
+  event.preventDefault()
+  api.getGame()
+    .then(ui.onGetGameSuccess)
+    .catch(ui.failure)
+}
+
 module.exports = {
   onUpdateMove,
   onNewGame,
-  addHandlers
+  addHandlers,
+  onGetGame
 }

@@ -1,18 +1,29 @@
 'use strict'
 const store = require('../store.js')
 
-const switchPlayer = function (playerId) {
-  const player = playerId === 'x' ? 'o' : 'x'
-  store.player = player
-  return store.player
+const switchPlayer = function (player) {
+  if (store.misclick === 'misclick') {
+    return
+  }
+  if (store.misclick === 'click') {
+    const players = player === 'x' ? 'o' : 'x'
+    store.player = players
+    $('#player-turn').html(`Player: ${store.player}'s Turn`)
+    return players
+  }
 }
-
-const checkBox = function (id, player) {
+const checkBox = function (id, value, over) {
+  if (over === true) {
+    return
+  }
   if (store.cells[id] === '') {
-    store.cells[id] = player
-    console.log('it wrked')
+    store.cells[id] = value
+    // console.log('it wrked')
+    store.misclick = 'click'
   } else if (store.cells[id] === 'x' || 'o') {
-    console.log('Try Again')
+    $('#message').html('Misclicked')
+    // console.log('Try Again')
+    store.misclick = 'misclick'
   }
 }
 const findWinner = function (gameboard) {
@@ -24,7 +35,11 @@ const findWinner = function (gameboard) {
 (gameboard[2] === 'x' && gameboard[5] === 'x' && gameboard[8] === 'x') ||
 (gameboard[0] === 'x' && gameboard[4] === 'x' && gameboard[8] === 'x') ||
 (gameboard[2] === 'x' && gameboard[4] === 'x' && gameboard[6] === 'x')) {
+    store.over = true
+    store.player = 'X'
+    store.winner = 'X'
     console.log('X Wins!!!')
+    $('#message-box').html(' X wins!')
   } else if ((gameboard[0] === 'o' && gameboard[1] === 'o' && gameboard[2] === 'o') ||
 (gameboard[3] === 'o' && gameboard[4] === 'o' && gameboard[5] === 'o') ||
 (gameboard[6] === 'o' && gameboard[7] === 'o' && gameboard[8] === 'o') ||
@@ -33,11 +48,19 @@ const findWinner = function (gameboard) {
 (gameboard[2] === 'o' && gameboard[5] === 'o' && gameboard[8] === 'o') ||
 (gameboard[0] === 'o' && gameboard[4] === 'o' && gameboard[8] === 'o') ||
 (gameboard[2] === 'o' && gameboard[4] === 'o' && gameboard[6] === 'o')) {
+    store.over = true
+    store.player = 'O'
+    store.winner = 'O'
     console.log('O Wins!!!')
+    $('#message-box').html('O wins!')
   } else if (gameboard[0] !== '' && gameboard[1] !== '' && gameboard[2] !== '' &&
    gameboard[3] !== '' && gameboard[4] !== '' && gameboard[5] !== '' &&
    gameboard[6] !== '' && gameboard[7] !== '' && gameboard[8] !== '') {
+    store.over = true
+    store.player = 'X'
+    store.winner = 'Tie'
     console.log('Game Tied')
+    $('#message-box').html('Game Tied')
   }
 }
 module.exports = {

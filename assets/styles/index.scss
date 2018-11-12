@@ -16,7 +16,8 @@ body {
   border: 1px solid $white;
   color: $font-color;
   display: flex;
-  height: 200px;
+  height: 100px;
+  width: 50px;
   justify-content: center;
 }
 
@@ -29,5 +30,5 @@ body {
 }
 
 .hidden {
-  visibility: hidden;
+  display: none;
 }
