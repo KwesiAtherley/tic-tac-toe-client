@@ -11,14 +11,14 @@ const onNewGameSuccess = function (newGame) {
   $('#message').addClass('success-message')
   $('#message').removeClass('error-message')
   $('#player-turn').html(`Player: ${store.player}'s Turn`)
-  $('.box').html('')
+  $('.box').empty()
   $('#game-message').html('')
 }
 const onUpdateMoveSuccess = function (id) {
   if (store.player === 'x' && store.over === false && store.cells[id] === '') {
-    $(event.target).html('X')
+    $(event.target).html('x')
   } else if (store.player === 'o' && store.over === false && store.cells[id] === '') {
-    $(event.target).html('O')
+    $(event.target).html('o')
   }
 }
 

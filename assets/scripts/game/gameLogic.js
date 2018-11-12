@@ -36,9 +36,9 @@ const findWinner = function (gameboard) {
 (gameboard[0] === 'x' && gameboard[4] === 'x' && gameboard[8] === 'x') ||
 (gameboard[2] === 'x' && gameboard[4] === 'x' && gameboard[6] === 'x')) {
     store.over = true
-    store.player = 'X'
-    store.winner = 'X'
-    console.log('X Wins!!!')
+    store.player = 'x'
+    store.winner = 'x'
+    // console.log('X Wins!!!')
     $('#game-message').html(' X wins!')
   } else if ((gameboard[0] === 'o' && gameboard[1] === 'o' && gameboard[2] === 'o') ||
 (gameboard[3] === 'o' && gameboard[4] === 'o' && gameboard[5] === 'o') ||
@@ -49,17 +49,17 @@ const findWinner = function (gameboard) {
 (gameboard[0] === 'o' && gameboard[4] === 'o' && gameboard[8] === 'o') ||
 (gameboard[2] === 'o' && gameboard[4] === 'o' && gameboard[6] === 'o')) {
     store.over = true
-    store.player = 'O'
-    store.winner = 'O'
-    console.log('O Wins!!!')
+    store.player = 'o'
+    store.winner = 'o'
+    // console.log('O Wins!!!')
     $('#game-message').html('O wins!')
   } else if (gameboard[0] !== '' && gameboard[1] !== '' && gameboard[2] !== '' &&
    gameboard[3] !== '' && gameboard[4] !== '' && gameboard[5] !== '' &&
    gameboard[6] !== '' && gameboard[7] !== '' && gameboard[8] !== '') {
     store.over = true
-    store.player = 'X'
+    store.player = 'x'
     store.winner = 'Tie'
-    console.log('Game Tied')
+    // console.log('Game Tied')
     $('#game-message').html('Game Tied')
   }
 }
