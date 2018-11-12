@@ -12,6 +12,7 @@ const onNewGameSuccess = function (newGame) {
   $('#message').removeClass('error-message')
   $('#player-turn').html(`Player: ${store.player}'s Turn`)
   $('.box').html('')
+  $('#game-message').html('')
 }
 const onUpdateMoveSuccess = function (id) {
   if (store.player === 'x' && store.over === false && store.cells[id] === '') {

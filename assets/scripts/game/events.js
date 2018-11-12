@@ -26,10 +26,6 @@ const onNewGame = function (event) {
     .catch(ui.failure)
 }
 
-const addHandlers = function () {
-  $('#play-game').on('submit', onNewGame)
-}
-
 const onGetGame = function (event) {
   event.preventDefault()
   api.getGame()
@@ -40,6 +36,5 @@ const onGetGame = function (event) {
 module.exports = {
   onUpdateMove,
   onNewGame,
-  addHandlers,
   onGetGame
 }
