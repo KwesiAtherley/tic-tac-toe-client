@@ -6,9 +6,16 @@ $white: #fff;
 $grey: rgb(128, 128, 128);
 $teal: rgb(0, 156, 161);
 $black: #000;
+$green: #406d43;
+$purple: #c5c0e6;
+
+.anything {
+  margin: 0 auto;
+  text-align: center;
+}
 
 body {
-  background-color: $background-color;
+  background-color: $purple;
 }
 
 .box {
@@ -16,10 +23,16 @@ body {
   border: 1px solid $white;
   color: $font-color;
   display: flex;
+  font-size: 50px;
   height: 250px;
   justify-content: center;
   width: 50px;
 
+
+}
+
+.front-facing {
+  text-align: center;
 }
 
 .grey {
@@ -29,6 +42,18 @@ body {
 // .teal {
 //   background-color: $teal;
 // }
+h1 {
+  text-align: center;
+}
+
+h5 {
+  text-align: center;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+}
 
 .hidden {
   display: none;
