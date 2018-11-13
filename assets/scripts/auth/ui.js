@@ -27,6 +27,7 @@ const signInSuccess = function (signInResponse) {
   $('#sign-up').addClass('hidden')
   $('#sign-in').addClass('hidden')
   $('#game-box').removeClass('hidden')
+  $('.fixUp').removeClass('hidden')
 }
 
 const changePasswordSuccess = function (changePasswordResponse) {
