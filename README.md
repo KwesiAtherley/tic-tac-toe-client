@@ -13,4 +13,4 @@
 
 ### Wireframe
 
-[Wireframe](https://i.imgur.com/KYpdFvW.jpg)
+![Wireframe](https://i.imgur.com/KYpdFvW.jpg)
