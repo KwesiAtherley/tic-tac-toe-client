@@ -1,7 +1,7 @@
 'use strict'
 
 const store = require('../store.js')
-const store = require('../config.js')
+const config = require('../config.js')
 
 const signUp = function (inputData) {
   return $.ajax({
@@ -14,7 +14,7 @@ const signUp = function (inputData) {
 
 const signIn = function (inputData) {
   return $.ajax({
-    url: config.apiUrl +  '/sign-in',
+    url: config.apiUrl + '/sign-in',
     method: 'POST',
     contentType: 'application/json',
     data: JSON.stringify(inputData)
@@ -22,7 +22,7 @@ const signIn = function (inputData) {
 }
 const changePassword = function (inputData) {
   return $.ajax({
-    url: config.apiUrl +  '/change-password',
+    url: config.apiUrl + '/change-password',
     method: 'PATCH',
     headers: {
       Authorization: `Token token=${store.user.token}`
@@ -35,7 +35,7 @@ const changePassword = function (inputData) {
 
 const signOut = function () {
   return $.ajax({
-    url: config.apiUrl +  '/sign-out',
+    url: config.apiUrl + '/sign-out',
     method: 'DELETE',
     headers: {
       Authorization: `Token token=${store.user.token}`
