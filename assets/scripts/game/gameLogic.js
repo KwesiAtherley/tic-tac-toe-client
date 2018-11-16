@@ -22,6 +22,7 @@ const checkBox = function (id, value, over) {
     store.misclick = 'click'
   } else if (store.cells[id] === 'x' || 'o') {
     $('#message').html('Misclicked')
+    $('#message').fadeOut(600)
     // console.log('Try Again')
     store.misclick = 'misclick'
   }
@@ -49,7 +50,7 @@ const findWinner = function (gameboard) {
 (gameboard[0] === 'o' && gameboard[4] === 'o' && gameboard[8] === 'o') ||
 (gameboard[2] === 'o' && gameboard[4] === 'o' && gameboard[6] === 'o')) {
     store.over = true
-    store.player = 'o'
+    store.player = 'x'
     store.winner = 'o'
     // console.log('O Wins!!!')
     $('#game-message').html('O wins!')

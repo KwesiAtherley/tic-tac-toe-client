@@ -8,6 +8,7 @@ const onNewGameSuccess = function (newGame) {
   store.over = newGame.game.over
   // console.log(store)
   $('#message').html('Started New Game')
+  $('#message').show()
   $('#message').addClass('success-message')
   $('#message').removeClass('error-message')
   $('#player-turn').html(`Player: ${store.player}'s Turn`)
